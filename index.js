@@ -79,7 +79,7 @@ function playRound(playerSelection, computerSelection)
   // else player chose an invalid move
   else {
     // set outcome to player choosing an invalid move
-    outcome = `${playerSelection} is not a valid move!`
+    outcome = `${playerSelection} is not a valid move!`;
   }
 
   // return the outcome
@@ -89,9 +89,11 @@ function playRound(playerSelection, computerSelection)
 // play 5 rounds of Rock, Paper, Scissors
 function game() {
   // play for 5 rounds
-  {
+  for (let i = 0; i < 5; i++) {
     // get player's move
+    let playerSelection = prompt('Make your move. Rock, Paper or Scissors?');
     // play a round between player and computer
     // print the outcome of the round
+    console.log(playRound(playerSelection, getComputerChoice()));
   }
 }
