@@ -39,17 +39,32 @@ function getComputerChoice() {
 // input: computer's selection
 // returns: outcome declaring the winner of the round
 {
+  // init outcome to nothing
   // make player's selection case-insensitive
-  
+
   // if player is rock and computer is scissors, player wins
   // if player is paper and computer is rock, player wins
   // if player is scissors and computer is paper, player wins
+  {
+    // set outcome to player's move beats computer's and player wins
+  }
 
   // if player is rock and computer is paper, player loses
   // if player is paper and computer is scissors, player loses
   // if player is scissors and computer is rock, player loses
+  {
+    // set outcome to computer's move beats player's and player loses
+  }
 
   // if player and computer chose the same, it's a tie
+  {
+    // set outcome to player's move ties with computers and tie it up
+  }
 
   // else player chose an invalid move
+  {
+    // set outcome to player choosing an invalid move
+  }
+
+  // return the outcome
 }
