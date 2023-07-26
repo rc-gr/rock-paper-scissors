@@ -1,3 +1,5 @@
+let capitalize = (str) =>  `${str.charAt(0).toUpperCase()}${str.substr(1).toLowerCase()}`;
+
 // get a random move from the computer
 // returns: the chosen move from the computer
 function getComputerChoice() {
@@ -52,6 +54,8 @@ function playRound(playerSelection, computerSelection)
   playerSelection === 'paper' && computerSelection === 'rock'||
   playerSelection === 'scissors' && computerSelection === 'paper')
   {
+    playerSelection = capitalize(playerSelection);
+    computerSelection = capitalize(computerSelection);
     // set outcome to player's move beats computer's and player wins
     outcome = `${playerSelection} beats ${computerSelection}! You win!`;
   }
@@ -62,12 +66,16 @@ function playRound(playerSelection, computerSelection)
   playerSelection === 'paper' && computerSelection === 'scissors' ||
   playerSelection === 'scissors' && computerSelection === 'rock')
   {
+    playerSelection = capitalize(playerSelection);
+    computerSelection = capitalize(computerSelection);
     // set outcome to computer's move beats player's and player loses
     outcome = `${computerSelection} beats ${playerSelection}! You lose!`;
   }
   // if player and computer chose the same, it's a tie
   else if (playerSelection === computerSelection)
   {
+    playerSelection = capitalize(playerSelection);
+    computerSelection = capitalize(computerSelection);
     // set outcome to player's move ties with computers and tie it up
     outcome = `${playerSelection} ties with ${computerSelection}! It's a draw!`;
   }
