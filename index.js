@@ -38,33 +38,46 @@ function getComputerChoice() {
 // input: player's selection
 // input: computer's selection
 // returns: outcome declaring the winner of the round
+function playRound(playerSelection, computerSelection)
 {
   // init outcome to nothing
+  let outcome = ''
   // make player's selection case-insensitive
+  playerSelection = playerSelection.toLowerCase();
 
   // if player is rock and computer is scissors, player wins
   // if player is paper and computer is rock, player wins
   // if player is scissors and computer is paper, player wins
+  if (playerSelection === 'rock' && computerSelection === 'scissors' ||
+  playerSelection === 'paper' && computerSelection === 'rock'||
+  playerSelection === 'scissors' && computerSelection === 'paper')
   {
     // set outcome to player's move beats computer's and player wins
+    outcome = `${playerSelection} beats ${computerSelection}! You win!`;
   }
-
   // if player is rock and computer is paper, player loses
   // if player is paper and computer is scissors, player loses
   // if player is scissors and computer is rock, player loses
+  else if (playerSelection === 'rock' && computerSelection === 'paper' ||
+  playerSelection === 'paper' && computerSelection === 'scissors' ||
+  playerSelection === 'scissors' && computerSelection === 'rock')
   {
     // set outcome to computer's move beats player's and player loses
+    outcome = `${computerSelection} beats ${playerSelection}! You lose!`;
   }
-
   // if player and computer chose the same, it's a tie
+  else if (playerSelection === computerSelection)
   {
     // set outcome to player's move ties with computers and tie it up
+    outcome = `${playerSelection} ties with ${computerSelection}! It's a draw!`;
   }
-
   // else player chose an invalid move
+  else
   {
     // set outcome to player choosing an invalid move
+    outcome = `${playerSelection} is not a valid move!`
   }
 
   // return the outcome
+  return outcome;
 }
