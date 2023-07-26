@@ -85,3 +85,13 @@ function playRound(playerSelection, computerSelection)
   // return the outcome
   return outcome;
 }
+
+// play 5 rounds of Rock, Paper, Scissors
+function game() {
+  // play for 5 rounds
+  {
+    // get player's move
+    // play a round between player and computer
+    // print the outcome of the round
+  }
+}
