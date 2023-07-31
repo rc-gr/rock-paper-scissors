@@ -25,8 +25,7 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function playRound(playerSelection, computerSelection)
-{
+function playRound(playerSelection, computerSelection) {
   let outcome = '';
   playerSelection = playerSelection.toLowerCase();
 
@@ -56,9 +55,3 @@ function playRound(playerSelection, computerSelection)
   return outcome;
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt('Make your move. Rock, Paper or Scissors?');
-    console.log(playRound(playerSelection, getComputerChoice()));
-  }
-}
