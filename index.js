@@ -55,3 +55,22 @@ function playRound(playerSelection, computerSelection) {
   return outcome;
 }
 
+const buttons = document.querySelectorAll('.move');
+buttons.forEach((button) => {
+  const classes = button.classList;
+  if (classes.contains('rock')) {
+    button.addEventListener('click', () => {
+      console.log(playRound('rock', getComputerChoice()));
+    })
+  }
+  else if (classes.contains('paper')) {
+    button.addEventListener('click', () => {
+      console.log(playRound('paper', getComputerChoice()));
+    })
+  }
+  else if (classes.contains('scissors')) {
+    button.addEventListener('click', () => {
+      console.log(playRound('scissors', getComputerChoice()));
+    })
+  }
+})
