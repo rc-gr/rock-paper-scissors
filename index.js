@@ -58,19 +58,22 @@ function playRound(playerSelection, computerSelection) {
 const buttons = document.querySelectorAll('.move');
 buttons.forEach((button) => {
   const classes = button.classList;
+  let className = '';
   if (classes.contains('rock')) {
-    button.addEventListener('click', () => {
-      console.log(playRound('rock', getComputerChoice()));
-    })
+    className = 'rock';
   }
   else if (classes.contains('paper')) {
-    button.addEventListener('click', () => {
-      console.log(playRound('paper', getComputerChoice()));
-    })
+    className = 'paper';
   }
   else if (classes.contains('scissors')) {
-    button.addEventListener('click', () => {
-      console.log(playRound('scissors', getComputerChoice()));
-    })
+    className = 'scissors';
   }
+  else {
+    return;
+  }
+
+  button.addEventListener('click', () => {
+    const result = playRound(className, getComputerChoice());
+    console.log(result);
+  });
 })
