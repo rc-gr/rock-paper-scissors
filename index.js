@@ -1,4 +1,4 @@
-let capitalize = (str) => `${str.charAt(0).toUpperCase()}${str.substr(1).toLowerCase()}`;
+const capitalize = (str) => `${str.charAt(0).toUpperCase()}${str.substr(1).toLowerCase()}`;
 
 
 function getComputerChoice() {
@@ -55,6 +55,9 @@ function playRound(playerSelection, computerSelection) {
   return outcome;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 const buttons = document.querySelectorAll('.move');
 buttons.forEach((button) => {
   const classes = button.classList;
@@ -63,6 +66,17 @@ buttons.forEach((button) => {
       classes.contains('scissors')) {
     button.addEventListener('click', () => {
       const result = playRound(button.textContent.trim(), getComputerChoice());
+
+      if (result.includes('win')) {
+        playerScore++;
+        document.querySelector('#player-score')
+          .textContent = playerScore;
+      }
+      else if (result.includes('lose')) {
+        computerScore++;
+        document.querySelector('#computer-score')
+          .textContent = computerScore;
+      }
 
       const resultDiv = document.createElement('div');
       resultDiv.textContent = result;
