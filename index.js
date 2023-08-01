@@ -63,7 +63,12 @@ buttons.forEach((button) => {
       classes.contains('scissors')) {
     button.addEventListener('click', () => {
       const result = playRound(button.textContent.trim(), getComputerChoice());
-      console.log(result);
+
+      const resultDiv = document.createElement('div');
+      resultDiv.textContent = result;
+      
+      document.querySelector('#results')
+        .appendChild(resultDiv);
     });
   }
 })
