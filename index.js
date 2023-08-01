@@ -55,6 +55,7 @@ function playRound(playerSelection, computerSelection) {
   return outcome;
 }
 
+const TARGET_SCORE = 5;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -83,6 +84,15 @@ buttons.forEach((button) => {
       
       document.querySelector('#results')
         .appendChild(resultDiv);
+
+      if (playerScore >= TARGET_SCORE) {
+        document.querySelector('#winner')
+          .textContent = 'You are the winner!';
+      }
+      else if (computerScore >= TARGET_SCORE) {
+        document.querySelector('#winner')
+          .textContent = 'Computer is the winner!';
+      }
     });
   }
-})
+});
